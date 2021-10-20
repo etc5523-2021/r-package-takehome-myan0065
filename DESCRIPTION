@@ -1,5 +1,5 @@
 Package: YmyColour
-Title: Colour Palettes for Discrete and Continuous Scale in Ggplot2. 
+Title: Colour Palettes for Discrete and Continuous Scale in Ggplot2 
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Mengyun",
