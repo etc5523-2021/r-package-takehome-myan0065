@@ -18,14 +18,14 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of packageName is to ...
+The goal of YmyColour package is to apply colour palettes to both discrete and continuous scale in ggplot2.
 
 ## Installation
 
-You can install the development version of packageName with ...
+You can install the development version of YmyColour from GitHub with:
 
 ```{r install, eval = FALSE}
-remotes::install_github("user/repo")
+remotes::install_github("etc5523-2021/r-package-takehome-myan0065")
 ```
 
 ## Example
