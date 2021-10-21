@@ -44,7 +44,7 @@ scale_colour_ymy_seq_c <- function(name = names(ymy_colours)[1],
   if(!name %in% names(ymy_colours))
     stop('Colour must be "Orange", "Blue", "Green", "Coral", "Rust" or "Yellow"', call. = FALSE)
 
-  low <- name
+  low <- ymy_colours[[name]]
   top <- colorspace::lighten(low, amount = amount)
   range <- c(low, top)
 
@@ -58,10 +58,6 @@ scale_colour_ymy_seq_c <- function(name = names(ymy_colours)[1],
 
 
 
-df <- data.frame(x = 1:4, y = 1:4, type = letters[1:4])
-ggplot(df, aes(x = x, y = y,colour = y)) +
-geom_point(size = 10) +
-  theme_bw() +
-scale_colour_ymy_seq_c(name = "Blue", amount = 0.6, direction = -1)
+
 
 
