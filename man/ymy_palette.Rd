@@ -7,20 +7,18 @@
 ymy_palette(palette = "ymy_colours", direction = 1)
 }
 \arguments{
-\item{palette}{character string, specifying the name of the palette to be used}
+\item{palette}{character string, specifying the name of the palette to be used.}
 
-\item{direction}{numeric, specifying the direction of the palette to be used}
-
-\item{n}{numeric, specifying the number of colours to be used}
+\item{direction}{numeric, specifying the direction of the palette to be used.}
 }
 \value{
-Colours in the palette
+A character vector of hex colour codes of 6.
 }
 \description{
 Ymy Colour Palette
 }
 \details{
-This function is designed to allow users to choose the number of colours to be used and the direction of the colours to be applied
+The ymy colour palette has 6 colours and the function is designed to allow users to choose the number of colours to be used and the direction of the colours to be applied.
 }
 \examples{
 ymy_palette()(2)
