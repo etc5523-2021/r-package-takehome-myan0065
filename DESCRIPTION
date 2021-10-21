@@ -18,3 +18,5 @@ Suggests:
     rmarkdown,
     knitr
 VignetteBuilder: knitr
+URL: https://github.com/etc5523-2021/r-package-takehome-myan0065
+BugReports: https://github.com/etc5523-2021/r-package-takehome-myan0065/issues
