@@ -19,7 +19,7 @@
 #' df <- data.frame(x = 1:6, y = 1:6, type = letters[1:6])
 #' ggplot(df, aes(x = x, y = y, colour = type)) +
 #' geom_point(size = 10) +
-#' theme_bw()
+#' theme_bw() +
 #' scale_colour_ymy_d()
 #'
 #' # Use reversed colour order
@@ -34,7 +34,7 @@
 #' # scale_colour_ymy_d but for filling colours
 #' library(ggplot2)
 #' df <- data.frame(x = 1:6, y = 1:6, type = letters[1:6])
-#' ggplot(df, aes(x = x, y = y, fill = type))+
+#' ggplot(df, aes(x = x, y = y, fill = type)) +
 #' geom_bar(stat = 'identity') +
 #' theme_bw() +
 #' scale_fill_ymy_d()
