@@ -1,8 +1,8 @@
 ---
-title: "introduction"
+title: "YmyColour Package"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{introduction}
+  %\VignetteIndexEntry{YmyColour Package}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -10,12 +10,198 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  fig.width = 6,
+  fig.height = 4,
+  fig.align = "center",
+  message = FALSE,
+  warning = FALSE
 )
 ```
 
-This is a package that I made to allow users to apply the colour palettes inside this package to both discrete and continuous scale in ggplot2. Here are the things you can do with it.
+## Introduction
 
-```{r setup}
+This is a package that I made to allow users to apply the colour palette inside this package to both discrete and continuous scale in ggplot2. It contains one colour palette and there are **six** colours inside this palette, they are named as "Orange", "Blue", "Green", "Coral", "Rust" and "Yellow".
+
+For discrete scale, you can specify the number of colours to be used and the order of the colour to be applied. For continuous scale, one colour can be selected from the palette to generate a gradient colour palette, please note that you need to specify the **name** of the colour in the argument, see below examples. Other arguments can be used in this scale are setting the order of the colours and the amount of the lightening you wish to apply.
+
+## Installation
+
+This package can be installed from GitHub as a **development** version.
+
+```{r, eval = FALSE}
+# install.packages("remotes")
+remotes::install_github("etc5523-2021/r-package-takehome-myan0065")
+```
+
+
+## Example
+
+Here are the things you can do with this package.
+
+```{r}
+# Set up
 library(YmyColour)
 ```
+
+### View the hex codes of the colours in the palette
+
+You can view the hex codes of the colours in the palette by specifying the number of the colours.
+
+```{r setup}
+# All 6 colours in the palette
+ymy_palette()(6)
+
+# Specifying the number of colours to be used
+ymy_palette()(3)
+
+```
+
+### View the reversed order of the palette
+
+```{r}
+# Reversed order of 6 colours
+ymy_palette(direction = -1)(6)
+
+# Reversed order of 3 chosen colours
+ymy_palette(direction = -1)(3)
+```
+
+### Discrete colour scale 
+
+Below is a demonstration on using the discrete scale functions **scale_colour_ymy_d( )** and **scale_fill_ymy_d( )** on the built-in dataset palmerpenguins.
+
+Firstly, we need to load the required packages.
+
+```{r}
+# Set up 
+library(palmerpenguins)
+library(YmyColour)
+library(ggplot2)
+```
+
+To apply colour settings to **colour** aesthetics.
+
+* Using default order of the colours
+
+```{r}
+ggplot(data = penguins, 
+       aes(x = species, 
+           y = flipper_length_mm)) +
+  geom_jitter(aes(color = species), 
+              alpha = 0.8, 
+              show.legend = FALSE, 
+              position = position_jitter(width = 0.2, seed = 0)) +
+  scale_colour_ymy_d() +
+  theme_bw() +
+  labs(x = "Species",
+       y = "Flipper length (mm)",
+       title = "Flipper length of penguins")
+
+```
+
+* Using reversed order of the colours
+
+```{r}
+ggplot(data = penguins, 
+       aes(x = species, 
+           y = flipper_length_mm)) +
+  geom_jitter(aes(color = species), 
+              alpha = 0.8, 
+              show.legend = FALSE, 
+              position = position_jitter(width = 0.2, seed = 0)) +
+  scale_colour_ymy_d(directio = -1) +
+  theme_bw() +
+  labs(x = "Species",
+       y = "Flipper length (mm)",
+       title = "Flipper length of penguins")
+
+```
+<br><br>
+To apply colour settings to **fill** aesthetics.
+
+* Using default order of the colours
+
+```{r}
+ggplot(data = penguins, 
+       aes(x = body_mass_g)) +
+  geom_histogram(aes(fill = species),
+                 alpha = 0.7,
+                 position = "identity") +
+  scale_fill_ymy_d() +
+  theme_bw() +
+  labs(x = "Body mass (g)",
+       y = "Frequency",
+       title = "Penguin body mass")
+```
+
+* Using reversed order of the colours
+```{r}
+ggplot(data = penguins, 
+       aes(x = body_mass_g)) +
+  geom_histogram(aes(fill = species),
+                 alpha = 0.7,
+                 position = "identity") +
+  scale_fill_ymy_d(direction = -1) +
+  theme_bw() +
+  labs(x = "Body mass (g)",
+       y = "Frequency",
+       title = "Penguin body mass")
+```
+
+
+### Continuous colour scale 
+
+You can specify a colour to be used and the amount of lightening by using the **name** and **amount** arguments inside **scale_colour_ymy_c** function.
+
+```{r}
+# select colour "Coral" and 0.8 lightening scale.
+ggplot(data = penguins, 
+       aes(x = flipper_length_mm,
+           y = body_mass_g)) +
+  geom_point(aes(color = body_mass_g)) +
+  facet_wrap(vars(species)) +
+  theme_bw() +
+  scale_colour_ymy_seq_c(name = "Coral", amount = 0.8) +
+  labs(title = "Penguin flipper and body mass",
+       x = "Flipper length (mm)",
+       y = "Body mass (g)",
+       color = "Body mass") +
+  theme(legend.position = "bottom") 
+
+```
+
+Using negative number for **amount** argument causes darkening.
+
+```{r}
+ggplot(data = penguins, 
+       aes(x = flipper_length_mm,
+           y = body_mass_g)) +
+  geom_point(aes(color = body_mass_g)) +
+  facet_wrap(vars(species)) +
+  theme_bw() +
+  scale_colour_ymy_seq_c(name = "Coral", amount = -0.8) +
+  labs(title = "Penguin flipper and body mass",
+       x = "Flipper length (mm)",
+       y = "Body mass (g)",
+       color = "Body mass") +
+  theme(legend.position = "bottom") 
+```
+
+You could also specify the order of the gradient colours by using the argument **direction** inside **scale_colour_ymy_c** function.
+
+```{r}
+ggplot(data = penguins, 
+       aes(x = flipper_length_mm,
+           y = body_mass_g)) +
+  geom_point(aes(color = body_mass_g)) +
+  facet_wrap(vars(species)) +
+  theme_bw() +
+  scale_colour_ymy_seq_c(name = "Green", amount = 0.8, direction = -1) +
+  labs(title = "Penguin flipper and body mass",
+       x = "Flipper length (mm)",
+       y = "Body mass (g)",
+       color = "Body mass") +
+  theme(legend.position = "bottom") 
+```
+

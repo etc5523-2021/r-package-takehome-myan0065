@@ -5,8 +5,8 @@ Authors@R:
     person(given = "Mengyun",
            family = "Yang",
            role = c("aut", "cre"),
-           email = "myan0065@student.monash.edu",
-Description: This package contains colour palettes that can be used as both discrete and continuous scale in ggplot2.
+           email = "myan0065@student.monash.edu")
+Description: This package contains colour palettes that can be used as both discrete and continuous scale in ggplot2
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true

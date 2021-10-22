@@ -16,10 +16,13 @@
 #'
 #' @param name character string, specifying the name of the colour to be used. Colours in YmyColour package include orange, blue, green, coral, yellow and rust.
 #' @param direction Sets the order of colours in the scale. If 1, the default, colours are ordered as default order. If -1, the order of colours is reversed.
-#' @param amount numeric specifying the amount of lightening. This is applied either multiplicatively or additively to the luminance value, depending on the setting of method (either relative or absolute). Negative numbers cause darkening.
-#' @param ... Other arguments passed on to \code{\link[ggplot2]{discrete_scale}}, \code{\link[ggplot2]{continuous_scale}}, or binned_scale to control name, limits, breaks, labels and so forth.
+#' @param amount numeric specifying the amount of lightening. This is applied either multiplicatively or additively to the luminance value,
+#' depending on the setting of method (either relative or absolute). Negative numbers cause darkening.
+#' @param ... Other arguments passed on to \code{\link[ggplot2]{discrete_scale}}, \code{\link[ggplot2]{continuous_scale}},
+#' or \code{\link[ggplot2]{binned_scale}} to control name, limits, breaks, labels and so forth.
 #'
 #' @details The ymy scales were carefully designed and tested on continuous data.
+#' @seealso Other colour scales: \code{\link[ggplot2]{scale_colour_brewer}}
 #' @export
 #'
 #' @examples

@@ -24,9 +24,10 @@ scale_fill_ymy_d(
 
 \item{direction}{Sets the order of colours in the scale. If 1, the default, colours are ordered as default order. If -1, the order of colours is reversed.}
 
-\item{aesthetics}{Character string or vector of character strings listing the name(s) of the aesthetic(s) that this scale works with. This can be useful, for example, to apply colour settings to the colour and fill aesthetics at the same time, via aesthetics = c("colour", "fill").}
+\item{aesthetics}{Character string or vector of character strings listing the name(s) of the aesthetic(s) that this scale works with.
+For example, to apply colour settings to colour or fill aesthetics, use aesthetics = c("colour", "fill").}
 
-\item{...}{Other arguments passed on to discrete_scale(), continuous_scale(), or binned_scale to control name, limits, breaks, labels and so forth.}
+\item{...}{Other arguments passed on to \code{\link[ggplot2]{discrete_scale}}, \code{\link[ggplot2]{continuous_scale}}, or \code{\link[ggplot2]{binned_scale}} to control name, limits, breaks, labels and so forth.}
 }
 \description{
 Discrete colour scale from YmyColour

@@ -26,12 +26,15 @@ ymy_colours <- list(
 #' @param palette character string, specifying the name of the palette to be used.
 #' @param direction numeric, specifying the direction of the palette to be used.
 #'
-#' @details The ymy colour palette has 6 colours and the function is designed to allow users to choose the number of colours to be used and the direction of the colours to be applied.
+#' @details The ymy colour palette has 6 colours and the function is designed to allow users to choose the number of colours to be used and the order of the colours to be applied.
 #' @return A character vector of hex colour codes of 6.
 #' @export
 #'
 #' @examples
+#' # To specify the number of colours to be used.
 #' ymy_palette()(2)
+#'
+#' # To specify the order of the colours and the number of colours to be used.
 #' ymy_palette(direction = -1)(3)
 ymy_palette <- function(palette = "ymy_colours", direction = 1) {
 

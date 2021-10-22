@@ -3,8 +3,9 @@
 #' Discrete colour scale from YmyColour
 #' @param palette character string, specifying the name of the palette to be used.
 #' @param direction Sets the order of colours in the scale. If 1, the default, colours are ordered as default order. If -1, the order of colours is reversed.
-#' @param aesthetics 	Character string or vector of character strings listing the name(s) of the aesthetic(s) that this scale works with. This can be useful, for example, to apply colour settings to the colour and fill aesthetics at the same time, via aesthetics = c("colour", "fill").
-#' @param ... Other arguments passed on to discrete_scale(), continuous_scale(), or binned_scale to control name, limits, breaks, labels and so forth.
+#' @param aesthetics 	Character string or vector of character strings listing the name(s) of the aesthetic(s) that this scale works with.
+#' For example, to apply colour settings to colour or fill aesthetics, use aesthetics = c("colour", "fill").
+#' @param ... Other arguments passed on to \code{\link[ggplot2]{discrete_scale}}, \code{\link[ggplot2]{continuous_scale}}, or \code{\link[ggplot2]{binned_scale}} to control name, limits, breaks, labels and so forth.
 #'
 #' @details The ymy scales were carefully designed and tested on discrete data. They were not designed to be extended to continuous data.
 #' @export

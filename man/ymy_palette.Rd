@@ -18,9 +18,12 @@ A character vector of hex colour codes of 6.
 Ymy Colour Palette
 }
 \details{
-The ymy colour palette has 6 colours and the function is designed to allow users to choose the number of colours to be used and the direction of the colours to be applied.
+The ymy colour palette has 6 colours and the function is designed to allow users to choose the number of colours to be used and the order of the colours to be applied.
 }
 \examples{
+# To specify the number of colours to be used.
 ymy_palette()(2)
+
+# To specify the order of the colours and the number of colours to be used.
 ymy_palette(direction = -1)(3)
 }

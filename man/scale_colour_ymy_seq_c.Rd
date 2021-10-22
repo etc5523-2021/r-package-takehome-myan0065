@@ -16,9 +16,11 @@ scale_colour_ymy_seq_c(
 
 \item{direction}{Sets the order of colours in the scale. If 1, the default, colours are ordered as default order. If -1, the order of colours is reversed.}
 
-\item{amount}{numeric specifying the amount of lightening. This is applied either multiplicatively or additively to the luminance value, depending on the setting of method (either relative or absolute). Negative numbers cause darkening.}
+\item{amount}{numeric specifying the amount of lightening. This is applied either multiplicatively or additively to the luminance value,
+depending on the setting of method (either relative or absolute). Negative numbers cause darkening.}
 
-\item{...}{Other arguments passed on to \code{\link[ggplot2]{discrete_scale}}, \code{\link[ggplot2]{continuous_scale}}, or binned_scale to control name, limits, breaks, labels and so forth.}
+\item{...}{Other arguments passed on to \code{\link[ggplot2]{discrete_scale}}, \code{\link[ggplot2]{continuous_scale}},
+or \code{\link[ggplot2]{binned_scale}} to control name, limits, breaks, labels and so forth.}
 }
 \description{
 Continuous colour scale from YmyColour
@@ -40,4 +42,7 @@ ggplot(df, aes(x = x, y = y,colour = y)) +
 geom_point(size = 10) +
 theme_bw() +
 scale_colour_ymy_seq_c(amount = 0.6, direction = -1)
+}
+\seealso{
+Other colour scales: \code{\link[ggplot2]{scale_colour_brewer}}
 }
