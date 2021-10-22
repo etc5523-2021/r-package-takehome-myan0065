@@ -6,18 +6,22 @@ Authors@R:
            family = "Yang",
            role = c("aut", "cre"),
            email = "myan0065@student.monash.edu")
-Description: This package contains colour palettes that can be used as both discrete and continuous scale in ggplot2
+Description: This package contains colour palettes that can be used as both discrete and continuous scale in ggplot2.
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
+Depends:
+    R (>= 2.10)
 Imports: 
-    ggplot2
+    ggplot2,
+    colorspace
 Suggests: 
     rmarkdown,
     knitr,
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    palmerpenguins
 VignetteBuilder: knitr
 URL: https://github.com/etc5523-2021/r-package-takehome-myan0065
 BugReports: https://github.com/etc5523-2021/r-package-takehome-myan0065/issues

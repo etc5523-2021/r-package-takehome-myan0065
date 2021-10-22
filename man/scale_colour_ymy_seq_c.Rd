@@ -30,19 +30,21 @@ The ymy scales were carefully designed and tested on continuous data.
 }
 \examples{
 # Set the amount of lightening
+library(ggplot2)
 df <- data.frame(x = 1:6, y = 1:6, type = letters[1:6])
 ggplot(df, aes(x = x, y = y,colour = y)) +
 geom_point(size = 10) +
 theme_bw() +
-scale_colour_ymy_seq_c(amount = 0.6)
+scale_colour_ymy_seq_c(name = "Coral", amount = 0.6)
 
 # Set reversed order for gradient colour
+library(ggplot2)
 df <- data.frame(x = 1:6, y = 1:6, type = letters[1:6])
 ggplot(df, aes(x = x, y = y,colour = y)) +
 geom_point(size = 10) +
 theme_bw() +
-scale_colour_ymy_seq_c(amount = 0.6, direction = -1)
+scale_colour_ymy_seq_c(name = "Green", amount = 0.6, direction = -1)
 }
 \seealso{
-Other colour scales: \code{\link[ggplot2]{scale_colour_brewer}}
+Other colour scales: \code{\link[ggplot2]{scale_colour_brewer}}, \code{\link[ggplot2]{scale_colour_viridis_c}}
 }

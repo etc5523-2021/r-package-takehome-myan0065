@@ -24,10 +24,11 @@ scale_fill_ymy_d(
 
 \item{direction}{Sets the order of colours in the scale. If 1, the default, colours are ordered as default order. If -1, the order of colours is reversed.}
 
-\item{aesthetics}{Character string or vector of character strings listing the name(s) of the aesthetic(s) that this scale works with.
+\item{aesthetics}{character string or vector of character strings listing the name(s) of the aesthetic(s) that this scale works with.
 For example, to apply colour settings to colour or fill aesthetics, use aesthetics = c("colour", "fill").}
 
-\item{...}{Other arguments passed on to \code{\link[ggplot2]{discrete_scale}}, \code{\link[ggplot2]{continuous_scale}}, or \code{\link[ggplot2]{binned_scale}} to control name, limits, breaks, labels and so forth.}
+\item{...}{Other arguments passed on to \code{\link[ggplot2]{discrete_scale}}], \code{\link[ggplot2]{continuous_scale}},
+or \code{\link[ggplot2]{binned_scale}} to control name, limits, breaks, labels and so forth.}
 }
 \description{
 Discrete colour scale from YmyColour
@@ -37,24 +38,30 @@ The ymy scales were carefully designed and tested on discrete data. They were no
 }
 \examples{
 # Use default colour order
+library(ggplot2)
 df <- data.frame(x = 1:6, y = 1:6, type = letters[1:6])
 ggplot(df, aes(x = x, y = y, colour = type)) +
 geom_point(size = 10) +
-theme_bw() +
+theme_bw()
 scale_colour_ymy_d()
 
-# scale_fill_ymy_d works just the same as
-#scale_colour_ymy_d but for filling colours
-df <- data.frame(x = 1:6, y = 1:6, type = letters[1:6])
-ggplot(df, aes(x = x, y = y, fill = type))+
-geom_bar(stat = 'identity') +
-theme_bw() +
-scale_fill_ymy_d()
-
 # Use reversed colour order
+library(ggplot2)
 df <- data.frame(x = 1:6, y = 1:6, type = letters[1:6])
 ggplot(df, aes(x = x, y = y, colour = type)) +
 geom_point(size = 10) +
 theme_bw() +
 scale_colour_ymy_d(direction = -1)
+
+# scale_fill_ymy_d works just the same as
+# scale_colour_ymy_d but for filling colours
+library(ggplot2)
+df <- data.frame(x = 1:6, y = 1:6, type = letters[1:6])
+ggplot(df, aes(x = x, y = y, fill = type))+
+geom_bar(stat = 'identity') +
+theme_bw() +
+scale_fill_ymy_d()
+}
+\seealso{
+Other colour scales: \code{\link[ggplot2]{scale_colour_brewer}}, \code{\link[ggplot2]{scale_colour_viridis_d}}
 }

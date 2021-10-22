@@ -21,24 +21,29 @@
 #' @param ... Other arguments passed on to \code{\link[ggplot2]{discrete_scale}}, \code{\link[ggplot2]{continuous_scale}},
 #' or \code{\link[ggplot2]{binned_scale}} to control name, limits, breaks, labels and so forth.
 #'
+#' @import ggplot2
+#' @import colorspace
 #' @details The ymy scales were carefully designed and tested on continuous data.
-#' @seealso Other colour scales: \code{\link[ggplot2]{scale_colour_brewer}}
+#' @seealso Other colour scales: \code{\link[ggplot2]{scale_colour_brewer}}, \code{\link[ggplot2]{scale_colour_viridis_c}}
 #' @export
 #'
 #' @examples
 #' # Set the amount of lightening
+#' library(ggplot2)
 #' df <- data.frame(x = 1:6, y = 1:6, type = letters[1:6])
 #' ggplot(df, aes(x = x, y = y,colour = y)) +
 #' geom_point(size = 10) +
 #' theme_bw() +
-#' scale_colour_ymy_seq_c(amount = 0.6)
+#' scale_colour_ymy_seq_c(name = "Coral", amount = 0.6)
 #'
 #' # Set reversed order for gradient colour
+#' library(ggplot2)
 #' df <- data.frame(x = 1:6, y = 1:6, type = letters[1:6])
 #' ggplot(df, aes(x = x, y = y,colour = y)) +
 #' geom_point(size = 10) +
 #' theme_bw() +
-#' scale_colour_ymy_seq_c(amount = 0.6, direction = -1)
+#' scale_colour_ymy_seq_c(name = "Green", amount = 0.6, direction = -1)
+
 scale_colour_ymy_seq_c <- function(name = names(ymy_colours)[1],
                                    direction = 1,
                                    amount = 0.2,
